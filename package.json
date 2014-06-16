@@ -1,0 +1,35 @@
+{
+  "name": "grunt-vagrant-commands",
+  "version": "0.0.1",
+  "description": "Runs arbitrary vagrant commands based off of .npmrc path configuration.",
+  "homepage": "https://github.com/lkwdwrd/grunt-vagrant-commands",
+  "repository": "https://github.com/lkwdwrd/grunt-vagrant-commands",
+  "author": {
+    "name": "Luke Woodward",
+    "email": "woodward.lucas@gmail.com",
+    "url": "http://lkwdwrd.com"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-nodeunit": "~0.3.0",
+    "grunt": "~0.4.2",
+    "jshint-stylish": "~0.1.5",
+    "load-grunt-tasks": "~0.3.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "npmconf": "^1.0.5"
+  }
+}
