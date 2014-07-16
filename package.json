@@ -1,6 +1,6 @@
 {
   "name": "grunt-vagrant-commands",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Runs arbitrary vagrant commands based off of .npmrc path configuration.",
   "homepage": "https://github.com/lkwdwrd/grunt-vagrant-commands",
   "repository": "https://github.com/lkwdwrd/grunt-vagrant-commands",

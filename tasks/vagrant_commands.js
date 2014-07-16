@@ -52,7 +52,7 @@ module.exports = function (grunt) {
       }
       vagrantPath = conf.get( 'vagrantPath' );
       
-      if ( ! grunt.file.isDir( vagrantPath ) ) {
+      if ( 'string' !== typeof vagrantPath || ! grunt.file.isDir( vagrantPath ) ) {
         vagrantPath = cwd;
       }
 
