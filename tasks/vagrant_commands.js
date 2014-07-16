@@ -46,22 +46,22 @@ module.exports = function (grunt) {
     }
 
     npmconf.load( options.rc, function( er, conf ){
-      // if ( er ) {
-      //   grunt.warn("Couldn't load npm configuration");
-      //   return done();
-      // }
-      // vagrantPath = conf.get( 'vagrantPath' );
+      if ( er ) {
+        grunt.warn("Couldn't load npm configuration");
+        return done();
+      }
+      vagrantPath = conf.get( 'vagrantPath' );
       
-      // if ( ! grunt.file.isDir( vagrantPath ) ) {
-      //   vagrantPath = cwd;
-      // }
+      if ( ! grunt.file.isDir( vagrantPath ) ) {
+        vagrantPath = cwd;
+      }
 
-      // grunt.file.setBase( vagrantPath );
+      grunt.file.setBase( vagrantPath );
 
-      // async.series( commands, function(){
-      //     grunt.file.setBase( cwd );
-      //     done();
-      // });
+      async.series( commands, function(){
+          grunt.file.setBase( cwd );
+          done();
+      });
     });
   });
 };
