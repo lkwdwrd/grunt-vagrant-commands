@@ -79,6 +79,9 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+### 0.0.2
+ - If no dir is present in config, try running in currend directory
+
 ### 0.0.1
  - The first release
 
