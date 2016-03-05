@@ -9,7 +9,6 @@
 'use strict';
 
 var path = require('path'),
-    npmconf = require( 'npmconf' ),
     async = require( 'async' );
 
 module.exports = function (grunt) {
@@ -33,7 +32,6 @@ module.exports = function (grunt) {
 
     var vagrantPath, i, length,
         commands = [],
-        cwd = process.cwd(),
         done = this.async();
 
     if ( ! this.data.commands ) {
@@ -45,23 +43,6 @@ module.exports = function (grunt) {
       commands.push( vagrantCMD( this.data.commands[ i ] ) );
     }
 
-    npmconf.load( options.rc, function( er, conf ){
-      if ( er ) {
-        grunt.warn("Couldn't load npm configuration");
-        return done();
-      }
-      vagrantPath = conf.get( 'vagrantPath' );
-      
-      if ( 'string' !== typeof vagrantPath || ! grunt.file.isDir( vagrantPath ) ) {
-        vagrantPath = cwd;
-      }
-
-      grunt.file.setBase( vagrantPath );
-
-      async.series( commands, function(){
-          grunt.file.setBase( cwd );
-          done();
-      });
-    });
+    async.series( commands, done );
   });
 };
